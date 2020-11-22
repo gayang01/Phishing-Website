@@ -1,0 +1,73 @@
+<html>
+  <style>
+  #mainLoginDiv {
+    text-align: center;
+    background-color: #bababa
+  }
+  #titleDiv {
+    color: #b57935;
+  }
+  .inputField {
+    resize: none;
+    height: 1.5em;
+  }
+  .forgotLink {
+    cursor: pointer;
+  }
+  .forgotLink:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+  </style>
+  <script>
+
+var email = "";
+var password = "";
+
+var login = function() {
+
+	var emailField = document.getElementById("emailInputs");
+	email = emailField.value;
+	
+	var passwordField = document.getElementById("passwordInputs");
+	password = passwordField.value;
+	
+	alert("E-mail: " + email + "\n" + "Password: " + password)
+	document.write("Your details have been stolen!");
+}
+
+  </script>
+  <head>
+    <title>
+      Brand Name
+    </title>
+  </head>
+  <body>
+    <div id = "mainLoginDiv">
+      <div id = "titleDiv">
+        <h1>
+        WorldShare
+        </h1>
+      </div>
+      <div id = "inputsDiv">
+        <textarea id = "emailInputs" class = "inputField" placeholder = "Email"></textarea>
+        <textarea id = "passwordInputs" class = "inputField" placeholder = "Password"></textarea>
+      </div>
+      <div id = "forgotLoginDiv">
+        <span id = "forgotEmailLink" class = "forgotLink">Forgot Email?</span>
+        <span id = "forgotPasswordLink" class = "forgotLink">Forgot Password?</span>
+      </div>
+      <div id = "loginButtonDiv">
+        <button onclick = "login()">Login</button>
+      </div>
+      <div id = "createAccountDiv">
+        <div id = "createAccountMessageDiv">
+          <p>----New to Brand Name----</p>
+        </div>
+        <div id = "createAccountButtonDiv">
+          <button>Create Account</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
