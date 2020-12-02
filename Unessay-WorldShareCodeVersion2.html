@@ -32,8 +32,13 @@ var login = function() {
 	var passwordField = document.getElementById("passwordInputs");
 	password = passwordField.value;
 	
-	alert("E-mail: " + email + "\n" + "Password: " + password)
-	document.write("Your details have been stolen!");
+	if (email.length == 0) {
+		alert("Invalid Email or Password\nPlease Try Again")
+	}
+	else {
+		alert("E-mail: " + email + "\n" + "Password: " + password)
+		document.write("Your details have been stolen!");
+	}
 }
 
   </script>
