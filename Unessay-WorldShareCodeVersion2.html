@@ -32,7 +32,7 @@ var login = function() {
 	var passwordField = document.getElementById("passwordInputs");
 	password = passwordField.value;
 	
-	if (email.length == 0) {
+	if (email.length == 0 || password.length == 0) {
 		alert("Invalid Email or Password\nPlease Try Again")
 	}
 	else {
