@@ -1,25 +1,41 @@
+<!DOCTYPE html>
 <html>
   <style>
   #mainLoginDiv {
     text-align: center;
-    background-color: white;
+    background-image: linear-gradient(to bottom right, #3a80e8, silver);
+    margin-bottom: 5%;
+    border: 2px solid black;
   }
   #titleDiv {
     color:#0000FF;
+    text-decoration: underline;
   }
   .inputField {
-    resize: none;
     height: 1.5em;
+    margin: 10px;
   }
   .forgotLink {
     cursor: pointer;
+    margin: 10px;
+    margin-right: 10px;
   }
   .forgotLink:hover {
     color: blue;
     text-decoration: underline;
   }
+  #createAccountButtonDiv {
+    padding-top: 10px;
+    padding-bottom: 27%;
+  }
+  #loginButtonDiv {
+    margin: 10px;
+  }
   </style>
   <script>
+var warningFunction = function() {
+	alert("WARNING\n\nYour account has been comprimised!\n\n Login NOW to secure your account");
+}
 
 var email = "";
 var password = "";
@@ -33,11 +49,16 @@ var login = function() {
 	password = passwordField.value;
 	
 	if (email.length == 0 || password.length == 0) {
-		alert("Invalid Email or Password\nPlease Try Again")
+		alert("Invalid Email or Password\nPlease Try Again");
+		var messageTag = document.createElement("p");
+		var divTag = document.getElementById("message");
+		messageTag.innerHTML = "Invalid Email or Password! Please Try Again";
+		messageTag.style.color = "red";
+		divTag.appendChild(messageTag);
 	}
 	else {
-		alert("E-mail: " + email + "\n" + "Password: " + password)
-		document.write("Your details have been stolen!");
+		alert("E-mail: " + email + "\n" + "Password: " + password);
+		document.write("<p>Your details have been stolen!</p>", "<p>E-mail: " + email + "</p>", "<p>" + "Password: " + password + "</p>");
 	}
 }
 
@@ -47,16 +68,16 @@ var login = function() {
       WorldShare!
     </title>
   </head>
-  <body>
+  <body onload = "warningFunction()">
     <div id = "mainLoginDiv">
       <div id = "titleDiv">
         <h1>
-        WorldShare
+        WorldShare!
         </h1>
       </div>
       <div id = "inputsDiv">
-        <textarea id = "emailInputs" class = "inputField" placeholder = "Email"></textarea>
-        <textarea id = "passwordInputs" class = "inputField" placeholder = "Password"></textarea>
+        <input id = "emailInputs" class = "inputField" placeholder = "Email">
+        <input type = "password" id = "passwordInputs" class = "inputField" placeholder = "Password">
       </div>
       <div id = "forgotLoginDiv">
         <span id = "forgotEmailLink" class = "forgotLink">Forgot Email?</span>
@@ -67,7 +88,7 @@ var login = function() {
       </div>
       <div id = "createAccountDiv">
         <div id = "createAccountMessageDiv">
-          <p>----New to WorldShare----</p>
+          <p id = "message">--------New to WorldShare?--------</p>
         </div>
         <div id = "createAccountButtonDiv">
           <button>Create Account</button>
