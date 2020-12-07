@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  #mainLoginDiv {
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #3a80e8, silver);
+    margin-bottom: 5%;
+    border: 2px solid black;
+  }
+  #titleDiv {
+    color:#0000FF;
+    text-decoration: underline;
+  }
+  .inputField {
+    height: 1.5em;
+    margin: 10px;
+  }
+  .forgotLink {
+    cursor: pointer;
+    margin: 10px;
+    margin-right: 10px;
+  }
+  .forgotLink:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+  #createAccountButtonDiv {
+    padding-top: 10px;
+    padding-bottom: 27%;
+  }
+  #loginButtonDiv {
+    margin: 10px;
+  }
+  </style>
+  <script>
+var warningFunction = function() {
+	alert("WARNING\n\nYour account has been comprimised!\n\n Login NOW to secure your account");
+}
+
+}
+
+  </script>
+  <head>
+    <title>
+      WorldShare!
+    </title>
+  </head>
+  <body onload = "warningFunction()">
+    <div id = "mainLoginDiv">
+      <div id = "titleDiv">
+        <h1>
+        WorldShare!
+        </h1>
+      </div>
+      <div id = "inputsDiv">
+        <input id = "emailInputs" class = "inputField" placeholder = "Email">
+        <input type = "password" id = "passwordInputs" class = "inputField" placeholder = "Password">
+      </div>
+      <div id = "forgotLoginDiv">
+        <span id = "forgotEmailLink" class = "forgotLink">Forgot Email?</span>
+        <span id = "forgotPasswordLink" class = "forgotLink">Forgot Password?</span>
+      </div>
+      <div id = "loginButtonDiv">
+        <button onclick = "login()">Login</button>
+      </div>
+      <div id = "createAccountDiv">
+        <div id = "createAccountMessageDiv">
+          <p id = "message">--------New to WorldShare?--------</p>
+        </div>
+        <div id = "createAccountButtonDiv">
+          <button>Create Account</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
